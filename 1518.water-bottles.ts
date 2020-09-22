@@ -6,10 +6,9 @@
 
 // @lc code=start
 function numWaterBottles(numBottles: number, numExchange: number): number {
-  let count = 0
-  while(numBottles > numExchange) {
-    
-  }
-};
+  if (numBottles < numExchange) return numBottles
+  return (
+    numExchange + numWaterBottles(numBottles - numExchange + 1, numExchange)
+  )
+}
 // @lc code=end
-
