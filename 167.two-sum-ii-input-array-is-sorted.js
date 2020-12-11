@@ -10,12 +10,21 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
-	for (let i = 0; i < nums.length; i++) {
-    for (let j = nums.length - 1; j >= 0; j--) {
-      if (nums[i] + nums[j] === target) {
-        return [i + 1, j + 1]
-      }
+var twoSum = function(numbers, target) {
+  let startIndex = 0;
+  let endIndex = numbers.length - 1;
+
+  while(startIndex < endIndex) {
+    if(numbers[startIndex] + numbers[endIndex] === target) {
+      return [startIndex + 1, endIndex + 1];
+    }
+
+    if(numbers[startIndex] + numbers[endIndex] < target) {
+      startIndex++;
+    }
+
+    if(numbers[startIndex] + numbers[endIndex] > target) {
+      endIndex--
     }
   }
 };
