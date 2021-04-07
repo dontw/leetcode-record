@@ -10,11 +10,11 @@
  * @return {number}
  */
 var findMaxConsecutiveOnes = function (nums) {
-  const arr = nums.join("").split(0);
+  const arr = nums.join('').split(0);
   let num = 0;
-  for(let i =0; i < arr.length; i++) {
-    if(num < arr[i].length) {
-      num = arr[i].length
+  for (let i = 0; i < arr.length; i++) {
+    if (num < arr[i].length) {
+      num = arr[i].length;
     }
   }
   return num;
